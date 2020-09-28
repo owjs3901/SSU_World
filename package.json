@@ -1,0 +1,15 @@
+{
+  "name": "ssu_world-master",
+  "version": "1.0.0",
+  "description": "숭실대 웹 프로그래밍 팀플",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1"
+  }
+}
