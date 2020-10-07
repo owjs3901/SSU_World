@@ -1,0 +1,21 @@
+header {
+    height: 140px;
+    background-color: #C0D4E6;
+}
+.title{
+    width: 392px;
+    height: 140px;
+}
+nav{
+    height: 60px;
+    background-color: #1C7CD5;
+}
+body{
+    background-color: whitesmoke;
+    background-image: linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff), linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff);
+    background-position: 0 0, 75px 75px;
+    background-size: 150px 150px
+}
+#main{
+    background-color: white;
+}
