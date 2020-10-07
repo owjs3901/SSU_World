@@ -1,0 +1,111 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>로그인</title>
+
+<style>
+	.btn{
+		width: 70px;
+		height: 20px;
+		text-align: center;
+		padding : 0px;
+	}
+	.btn a{
+		display: block;
+		width: 100%;
+		padding: 4px;
+		height: 20px;
+		line-height: 20px;
+		background: #27a;
+		color: #fff;
+		border-radius: 3px;
+		text-decoration: none;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	.btn a:hover{
+		background: #fff;
+		color: #27a;
+		border: 1px solid #27a;
+	}
+	
+	div#wrap{
+		width: 400px;
+		margin: 30px auto;
+		border : 3px solid skyblue;
+	}
+	
+	#select {
+		display : inline-block;
+		width: 120px;
+		border: 1px solid #27a;
+		border-radius: 3px;
+		padding: 4px;
+	}
+	
+	table th, table td{
+		padding: 15px;
+	}
+	table tbody td>input{
+		width: 120px;
+		border: 1px solid #27a;
+		border-radius: 3px;
+		padding: 4px;
+	}
+	.txt_r{ text-align: right; }
+	
+	#add{
+		display : inline-block;
+		width : 300px;
+		border : 1px solid black; 
+	}
+		
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<head>
+			<h1>&nbsp&nbsp&nbsp&nbsp&nbsp숭실월드 로그인</h1>
+		</head>
+		<form action="" method="post">
+			<table>
+				<colgroup>
+					<col width="100px"/>
+					<col width="*"/>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="s_id">ID</label></th>
+						<td id="add">
+							<input type="email" id="s_id" name="id"/>
+							<select id = "select" name="s_email" >
+								<option value="nate">@ nate.com</option>
+								<option value="naver">@ naver.com</option>
+								<option value="gmail">@ gmail.com</option>
+								<option value="daum">@ daum.net</option>
+							</select>
+							  
+						</td>
+					</tr>
+					<tr>
+						<th><label for="s_pw">PW</label></th>
+						<td>
+							<input type="password" id="s_pw" name="pw"/>
+		
+				<tfoot>
+					<tr>
+						<td colspan="2" >
+							<p class="btn">
+								<a href="">
+									로그인
+								</a>
+							</p>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
