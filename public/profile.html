@@ -81,21 +81,28 @@
 
 
         .box {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 70%;
             overflow: hidden;
         }
-
         .profile {
-            margin: auto;
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .col-6 {
-            text-align: center;
+        .mod {
+            width: 40px;
+            height: 40px;
+            border-radius: 70%;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .m {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
         }
     </style>
 </head>
@@ -116,24 +123,25 @@
                 <div class="box" style="margin: 0px auto;">
                     <img class="profile" src="img/profile.jpg">
                 </div>
+                <button class="mod" type="button"><img class="m" src="img/modify.png" alt=""></button>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-6 input-group m-auto">
-                <input type="text" class="form-control" placeholder="name" aria-label="name"
+        <div class="row mt-5">
+            <div class="col-3 input-group m-auto">
+                <input type="text" class="form-control" placeholder="닉네임" aria-label="name"
                     aria-describedby="basic-addon2">
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-6 input-group m-auto">
-                <input type="text" class="form-control" placeholder="message" aria-label="message"
-                    aria-describedby="basic-addon2">
+                <!-- <input type="text" class="form-control" placeholder="상태 메세지" aria-label="message"
+                    aria-describedby="basic-addon2"> -->
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="상태 메세지"></textarea>
             </div>
         </div>
-        <div class="row">
-            <!-- <button type="button" class="col-12 btn btn-primary">확인</button> -->
+        <div class="row mt-5">
             <div class="col-12 text-center">
-                <button class="btn btn-primary" style="height: 50px;" type="submit">Button</button>
+                <button class="btn btn-primary" style="height: 50px;" type="submit">확인</button>
             </div>
         </div>
     </div>
