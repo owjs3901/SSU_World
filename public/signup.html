@@ -1,0 +1,144 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>회원 가입</title>
+
+<style>
+	.btn{
+		width: 70px;
+		height: 20px;
+		text-align: center;a
+		padding:0px;		
+	}
+	.btn a{
+		display: block;
+		width: 100%;
+		padding: 4px;
+		height: 20px;
+		line-height: 20px;
+		background: #27a;
+		color: #fff;
+		border-radius: 3px;
+		text-decoration: none;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	.btn a:hover{
+		background: #fff;
+		color: #27a;
+		border: 1px solid #27a;
+	}
+	
+	div#wrap{
+		width: 800px;
+		margin: 30px auto;
+		border : 3px solid skyblue;
+	}
+	
+	#select, #id_confirm {
+		display : inline-block;
+		width: 120px;
+		background : #eee;
+		border: 1px solid #27a;
+		border-radius: 3px;
+		padding: 4px;
+	}
+	
+	#id_confrim:hover{
+		background: #fff;
+		color: #27a;
+	}
+	
+	table th, table td{
+		padding: 20px;
+	}
+	table tbody td>input{
+		width: 120px;
+		border: 1px solid #27a;
+		border-radius: 3px;
+		padding: 4px;
+	}
+	.txt_r{ text-align: right; }
+	<!--.phone{ width: 50px; } -->
+		
+	#add{
+		display : inline-block;
+		width : 600px;
+		<!--border : 1px solid black; -->
+	}
+	
+	
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<thead>
+			<h1>&nbsp&nbsp&nbsp&nbsp&nbsp숭실월드 회원 가입</h1>
+		</thead>
+		<form action="" method="post">
+			<table>
+				<colgroup>
+					<col width="100px"/>
+					<col width="*"/>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="s_id">ID</label></th>
+						<td id="add">
+							<input type="email" id="s_id" name="id"/>
+							<select id = "select" name="s_email" >
+								<option value="nate">@ nate.com</option>
+								<option value="naver">@ naver.com</option>
+								<option value="gmail">@ gmail.com</option>
+								<option value="daum">@ daum.net</option>
+							</select>
+							<input type="button" value="아이디 확인" id="id_confrim" oncilck="">
+							  
+						</td>
+					</tr>
+					<tr>
+						<th><label for="s_pw">PW</label></th>
+						<td>
+							<input type="text" id="s_pw" name="pw"/>
+						
+						</td>
+					</tr>
+					<tr>
+						<th><label for="s_name">NAME</label></th>
+						<td>
+							<input type="text" id="s_name" name="name"/>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="s_addr">BIRTH</label></th>
+						<td>
+							<input type="text" id="s_addr" name="addr"/>
+						</td>
+					</tr>
+				<!--  	<tr>
+						<th><label for="s_phone">PHONE</label></th>
+						<td>
+							<input type="text" id="s_phone" name="phone" class="phone"/>
+							- <input type="text" name="phone" class="phone"/>
+							- <input type="text" name="phone" class="phone"/>
+						</td>
+					</tr>	-->				
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2" >
+							<p class="btn">
+								<a href="">
+									회원 가입
+								</a>
+							</p>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
