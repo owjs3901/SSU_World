@@ -50,3 +50,12 @@ body{
 #main{
     background-color: white;
 }
+
+.login{
+    position: relative;
+    width: auto;
+    height: auto;
+    left : 70%;
+    top : 15px;
+    
+}
