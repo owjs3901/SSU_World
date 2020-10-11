@@ -12,7 +12,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="./style.css">
 
-    <title>프로필 설정</title>
+    <title>내 홈페이지</title>
 
     <style>
         .btn {
@@ -80,7 +80,37 @@
         }
 
 
-        /* .box {
+        .diary1 {
+            width: 800px;
+            height: 500px;
+            border:1px solid #000000;
+            border-radius: 10%;
+            background-color: #8dccff;
+        }
+        .diary2 {
+            margin-top: 25px;
+            margin-left: 20px;
+            width: 250px;
+            height: 450px;
+            border-radius: 10%;
+            float: left;
+            background-color: #fff;
+        }
+        .diary3 {
+            margin-top: 25px;
+            margin-left: 300px;
+            width: 480px;
+            height: 450px;
+            border-radius: 10%;
+            background-color: #fff;
+        }
+        .diary_ring{
+            margin-top: 40px;
+            margin-left: -20px;
+            height: 400px;
+            float: left;
+        }
+        .box {
             width: 200px;
             height: 200px;
             border-radius: 70%;
@@ -90,7 +120,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        } */
+        }
+        .today{
+            margin: auto;
+            width: 160px;
+            height: 25px;
+            background-color: #dcdcdc;
+        }
         
     </style>
 </head>
@@ -116,9 +152,27 @@
 
     <div class="container p-5" id="main">
         <div class="row">
-            <div class="col-12 container text-center">
-                <canvas width="200" height="100" style="border:1px solid #000000">
-                </canvas>
+            <div class="col-12 container">
+                <div class="diary1">
+                    <div class="diary2">
+                        <div class="box" style="margin: auto; margin-top: 10px;">
+                            <img class="profile" src="img/profile.jpg">
+                        </div>
+                        <p style="margin-top: 40px; text-align: center; font-size: 16px;">
+                            NAME
+                            <br><br>
+                            MESSAGE
+                            <br><br><br>
+                            BIRTH
+                        </p>
+                        <div class="today">
+                            <p style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
+                        </div>
+                    </div>
+                    <img class="diary_ring" src="img/diary_ring.png">
+                    <div class="diary3">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row mt-5">
