@@ -16,11 +16,29 @@ body{
     background-position: 0 0, 75px 75px;
     background-size: 150px 150px
 }
+
+.common1{
+    color: #fff;
+    font-size: 35px;
+    position: relative;
+    left: 10%;
+}
+.mt3-3{
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    left: 65%;
+}
+.mbox {
+    position: relative;
+    left: 610px;
+    top : 5px;
+    width: 45px;
+    height: 50px;
+    border-radius: 70%;
+    overflow: hidden;
+}
+
 #main{
     background-color: white;
-<<<<<<< HEAD
-=======
-    /* width: 41rem; */
-    /* height: 52rem; */
->>>>>>> refs/remotes/origin/master
 }
