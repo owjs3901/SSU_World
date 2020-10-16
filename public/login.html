@@ -58,7 +58,7 @@
 	#add{
 		display : inline-block;
 		width : 300px;
-		border : 1px solid black; 
+		
 	}
 		
 </style>
@@ -68,7 +68,7 @@
 		<head>
 			<h1>&nbsp&nbsp&nbsp&nbsp&nbsp숭실월드 로그인</h1>
 		</head>
-		<form action="" method="post">
+		<form action="profilebox.html" method="post">
 			<table>
 				<colgroup>
 					<col width="100px"/>
@@ -85,27 +85,44 @@
 								<option value="gmail">@ gmail.com</option>
 								<option value="daum">@ daum.net</option>
 							</select>
-							  
 						</td>
 					</tr>
 					<tr>
 						<th><label for="s_pw">PW</label></th>
 						<td>
 							<input type="password" id="s_pw" name="pw"/>
-		
+
 				<tfoot>
 					<tr>
 						<td colspan="2" >
-							<p class="btn">
-								<a href="">
-									로그인
-								</a>
-							</p>
+							<input type="button" id="btn" value="로그인"/>
 						</td>
 					</tr>
 				</tfoot>
 			</table>
 		</form>
 	</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+
+
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+				console.log("log check!");
+				document.forms[0].submit()		
+			});	
+		});
+	
+	</script>
+	
 </body>
 </html>

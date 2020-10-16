@@ -109,7 +109,7 @@
 			<thead>
 				<h1>&nbsp&nbsp&nbsp&nbsp&nbsp숭실월드 회원 가입</h1>
 			</thead>
-			<form action="" method="post">
+			<form action="profilebox.html" method="post">
 				<table>
 					<colgroup>
 						<col width="100px" />
@@ -161,11 +161,7 @@
 					<tfoot>
 						<tr>
 							<td colspan="2">
-								<p class="btn">
-									<a href="">
-										회원 가입
-									</a>
-								</p>
+								<input type="button" id="btn" value="회원가입"/>
 							</td>
 						</tr>
 					</tfoot>
@@ -183,6 +179,19 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>
+
+	<script>
+
+	$(function(){
+		
+		$("#btn").click(function(){
+			console.log("new person check!");
+			document.forms[0].submit()		
+		});	
+	});
+
+	</script>
+
 </body>
 
 </html>
