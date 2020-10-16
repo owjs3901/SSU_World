@@ -180,6 +180,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+        <script>
+            fetch("http://mbs-b.com:1000/user")
+            .then(res => {
+                if(res.status == 200)
+                return res.json()
+                else throw new Error('err')
+            })
+            .then(res =>{
+                document.getElementById("name").innerHTML = res.name
+                document.getElementById("message").innerHTML = res.message
+                document.getElementById("birth").innerHTML = res.birth
+            })
+
+
+        </script>
+
+
 </body>
+
+
 
 </html>
