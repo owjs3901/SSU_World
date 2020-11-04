@@ -82,7 +82,6 @@
 
         .diary1 {
             margin-left: 10px;
-            padding: 25px 50px;
             /* width: 800px; */
             height: 500px;
             border:1px solid #000000;
@@ -91,9 +90,9 @@
             position: relative;
         }
         .diary2 {
-            /* margin-top: 25px; */
-            /* margin-left: 20px; */
-            /* width:35%; */
+            margin-top: 25px;
+            margin-left: 20px;
+            width:35%;
             height: 450px;
             border-radius: 10%;
             float: left;
@@ -101,28 +100,27 @@
 
         }
         .diary3 {
-            /* margin-top: 25px; */
+            margin-top: 25px;
             /* margin-left: 200px; */
-            /* width: 50%; */
+            width: 50%;
             height: 450px;
             border-radius: 10%;
             background-color: #fff;
             position: relative;
-            /* left: -7%; */
+            left: -7%;
             z-index: 1;
         }
         .diary_ring{
-            margin-top: 25px;
-            padding: 0px;
+            margin-top: 40px;
             /* margin-left: -3%; */
             height: 400px;
             float: left;
             position: relative;
-            /* left: -3%; */
+            left: -3%;
             z-index: 2;
         }
         .box {
-            /* width: 80%; */
+            width: 80%;
             height: 200px;
             border-radius: 70%;
             overflow: hidden;
@@ -134,7 +132,7 @@
         }
         .today{
             margin: auto;
-            /* width: 160px; */
+            width: 160px;
             height: 25px;
             background-color: #dcdcdc;
         }
@@ -199,85 +197,64 @@
 
     <div class="container p-5" id="main">
         <div class="row">
-            <div class="col-9 col-sm-9 container m-auto">
+            <div class="col-sm-9 container m-auto">
                 <div class="row">
-                    <!-- <div class="col-12 container">
-                        <div class="col-"> -->
-                            <div class="diary1 col-12 col-sm-12 container">
-                                <div class="row">
-                                    <div class="diary2 col-3 col-sm-3">
-                                        <div class="box">
-                                            <img class="profile" src="img/profile.jpg">
-                                        </div>
-                                        <p id="name">
-                                            NAME
-                                        </p>
-                                        <p id="message">
-                                            MESSAGE
-                                        </p>
-                                        <p id="birth">
-                                            BIRTH
-                                        </p>
-                                        <div class="today">
-                                            <p style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
-                                        </div>
+                    <div class="col-12">
+                        <div class="diary1">
+                            <div class="diary2">
+                                <div class="box" style="margin: auto; margin-top: 10px;">
+                                    <img class="profile" src="img/profile.jpg">
+                                </div>
+                                <p id="name">
+                                    NAME
+                                </p>
+                                <p id="message">
+                                    MESSAGE
+                                </p>
+                                <p id="birth">
+                                    BIRTH
+                                </p>
+                                <div class="today">
+                                    <p style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
+                                </div>
+                            </div>
+                            <img class="diary_ring" src="img/diary_ring.png">
+                            <div class="diary3" style="overflow-y: auto;">
+                                <p style="font-size: 30px; text-align: center;"><b>방명록</b></p>
+                                <div class="list-group">
+                                    <div class="writebox">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">방명록 제목</h5>
+                                        <small>방명록 날짜</small>
                                     </div>
-                                    <img class="diary_ring col-1 col-sm-1" src="img/diary_ring.png" style="padding: 0px;">
-                                    <div class="diary3 col-8 col-sm-8" style="overflow-y: auto;">
-                                        <p style="font-size: 30px; text-align: center;"><b>방명록</b></p>
-                                        <div class="list-group">
-                                            <div class="writebox">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">방명록 제목</h5>
-                                                <small>방명록 날짜</small>
-                                            </div>
-                                            <p class="mb-1">방명록 본문</p>
-                                            <small>쓴사람 이름</small>
-                                            </div>
+                                    <p class="mb-1">방명록 본문</p>
+                                    <small>쓴사람 이름</small>
+                                    </div>
 
-                                            <div class="writebox">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">방명록 제목</h5>
-                                                <small>방명록 날짜</small>
-                                                </div>
-                                                <p class="mb-1">방명록 본문</p>
-                                                <small>쓴사람 이름</small>
-                                            </div>
-                                            
-                                            <div class="writebox">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">방명록 제목</h5>
-                                                <small>방명록 날짜</small>
-                                            </div>
-                                            <p class="mb-1">방명록 본문</p>
-                                            <small>쓴사람 이름</small>
-                                            </div>
+                                    <div class="writebox">
+                                        <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">방명록 제목</h5>
+                                        <small>방명록 날짜</small>
                                         </div>
+                                        <p class="mb-1">방명록 본문</p>
+                                        <small>쓴사람 이름</small>
+                                    </div>
+                                    
+                                    <div class="writebox">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">방명록 제목</h5>
+                                        <small>방명록 날짜</small>
+                                    </div>
+                                    <p class="mb-1">방명록 본문</p>
+                                    <small>쓴사람 이름</small>
                                     </div>
                                 </div>
-
-                                <p class="mb-1">방명록 본문</p>
-                                <small style="margin-left: 280px;">쓴사람 이름</small>
-                                <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
-                                <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>                 
-                              </div>
-                            
-                            <div class="writebox">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">방명록 제목</h5>
-                                <small>방명록 날짜</small>
-                              </div>
-                              <p class="mb-1">방명록 본문</p>
-                              <small style="margin-left: 280px;">쓴사람 이름</small>
-                              <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
-                              <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>                 
-
                             </div>
-                        <!-- </div>
-                    </div> -->
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-3 col-sm-3 m-auto">
+            <div class="col-3 m-auto">
                 <div class="rankbox">
                     <table class=rank_table width=5% height=1% border=0>
                         <tr class = "table-primary">
@@ -312,11 +289,11 @@
             
         </div>
         <div class="row mt-3">
-            <div class="col-6 col-sm-6 input-group m-auto">
+            <div class="col-6 input-group m-auto">
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-12 col-sm-12 text-center">
+            <div class="col-12 text-center">
             </div>
         </div>
 
@@ -353,7 +330,7 @@
             //     return res.json()
             //     else throw new Error('err')
             // })
-            // .then(res => {
+            // .then(res =>{
             //     document.getElementById("mname").innerHTML = res.name
 
             //     document.getElementById("name").innerHTML = res.name
