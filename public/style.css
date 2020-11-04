@@ -59,3 +59,37 @@ body{
     top : 15px;
     
 }
+
+/*****************************************
+		      바닥글(footer) 스타일
+ *****************************************/
+
+ #footer{
+    width: auto;
+    height: auto;
+	background: #eee;
+	margin-top: 120px;
+}
+
+#footer .footer_area{
+	width: 900px;
+	margin: auto;
+	padding: 20px 0;
+}
+
+#footer address{
+	font-size: 12px;
+	color: black;
+	padding-bottom: 6px;
+}
+
+
+
+#footer .copyright{
+	font-size: 13px; 
+	color: silver;
+	text-align: left;
+}
+/*****************************************
+	   바닥글(footer) 스타일 끝이요 제가 추가함
+ *****************************************/
