@@ -109,7 +109,7 @@
             background-color: #fff;
             position: relative;
             /* left: -7%; */
-            z-index: 1;
+            /* z-index: 1; */
         }
         .diary_ring{
             margin-top: 25px;
@@ -119,7 +119,7 @@
             float: left;
             position: relative;
             /* left: -3%; */
-            z-index: 2;
+            /* z-index: 2; */
         }
         .box {
             /* width: 80%; */
@@ -201,63 +201,66 @@
         <div class="row">
             <div class="col-9 col-sm-9 container m-auto">
                 <div class="row">
-                    <!-- <div class="col-12 container">
-                        <div class="col-"> -->
-                            <div class="diary1 col-12 col-sm-12 container">
-                                <div class="row">
-                                    <div class="diary2 col-3 col-sm-3">
-                                        <div class="box">
-                                            <img class="profile" src="img/profile.jpg">
+                    <div class="diary1 col-12 col-sm-12 container">
+                        <div class="row">
+                            <div class="diary2 container col-3 col-sm-3">
+                                <div class="box row">
+                                    <img class="profile" src="img/profile.jpg">
+                                </div>
+                                <p id="name">
+                                    NAME
+                                </p>
+                                <p id="message">
+                                    MESSAGE
+                                </p>
+                                <p id="birth">
+                                    BIRTH
+                                </p>
+                                <div class="today">
+                                    <p class="col-12 col-sm-12" style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
+                                </div>
+                            </div>
+                            <img class="diary_ring col-1 col-sm-1" src="img/diary_ring.png" style="padding: 0px;">
+                            <div class="diary3 col-8 col-sm-8" style="overflow-y: auto;">
+                                <p style="font-size: 30px; text-align: center;"><b>방명록</b></p>
+                                <button type = "button" class="btn btn-primary btn" style=" font-size: 12px;">방명록 작성</button>
+                                <div class="list-group">
+                                    <div class="writebox">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">방명록 제목</h5>
+                                            <small>방명록 날짜</small>
                                         </div>
-                                        <p id="name">
-                                            NAME
-                                        </p>
-                                        <p id="message">
-                                            MESSAGE
-                                        </p>
-                                        <p id="birth">
-                                            BIRTH
-                                        </p>
-                                        <div class="today">
-                                            <p style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
-                                        </div>
+                                        <p class="mb-1">방명록 본문</p>
+                                        <small style="margin-left: 275px;">쓴사람 이름</small>
+                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
+                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>               
                                     </div>
-                                    <img class="diary_ring col-1 col-sm-1" src="img/diary_ring.png" style="padding: 0px;">
-                                    <div class="diary3 col-8 col-sm-8" style="overflow-y: auto;">
-                                        <p style="font-size: 30px; text-align: center;"><b>방명록</b></p>
-                                        <div class="list-group">
-                                            <div class="writebox">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">방명록 제목</h5>
-                                                <small>방명록 날짜</small>
-                                            </div>
-                                            <p class="mb-1">방명록 본문</p>
-                                            <small>쓴사람 이름</small>
-                                            </div>
 
-                                            <div class="writebox">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">방명록 제목</h5>
-                                                <small>방명록 날짜</small>
-                                                </div>
-                                                <p class="mb-1">방명록 본문</p>
-                                                <small>쓴사람 이름</small>
-                                            </div>
-                                            
-                                            <div class="writebox">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">방명록 제목</h5>
-                                                <small>방명록 날짜</small>
-                                            </div>
-                                            <p class="mb-1">방명록 본문</p>
-                                            <small>쓴사람 이름</small>
-                                            </div>
+                                    <div class="writebox">
+                                        <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">방명록 제목</h5>
+                                        <small>방명록 날짜</small>
                                         </div>
+                                        <p class="mb-1">방명록 본문</p>
+                                        <small style="margin-left: 275px;">쓴사람 이름</small>
+                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
+                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>               
+                                    </div>
+                                    
+                                    <div class="writebox">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">방명록 제목</h5>
+                                        <small>방명록 날짜</small>
+                                    </div>
+                                    <p class="mb-1">방명록 본문</p>
+                                    <small style="margin-left: 275px;">쓴사람 이름</small>
+                                    <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
+                                    <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>               
                                     </div>
                                 </div>
                             </div>
-                        <!-- </div>
-                    </div> -->
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-3 col-sm-3 m-auto">
