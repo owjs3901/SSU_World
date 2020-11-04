@@ -161,6 +161,20 @@
             text-align: center;
             font-size: 16px;
        }
+
+       #inputtitle, #inputwrite{
+           padding: 15px;
+       }
+       .form-control{
+           width: max-content;
+       }
+
+       .pd{
+           margin-top: 80px;
+           width: 10px;
+           height: 5px;
+       }
+
     </style>
 </head>
 
@@ -213,7 +227,51 @@
                             </div>
                             <img class="diary_ring col-1 col-sm-1" src="img/diary_ring.png" style="padding: 0px;">
                             <div class="diary3 col-8 col-sm-8" style="overflow-y: auto;">
-                                <p style="font-size: 30px; text-align: center;"><b>방명록</b></p>
+                                <p style="font-size: 30px; text-align: center;"><b>방명록 작성</b></p>
+                            
+                                <div class ="row write">
+                                   
+                                    <div class="col-sm-1">
+                                        
+                                      </div>
+                                    <div class="form-group row">
+                                        <label for="inputtitle" class="col-sm-3 col-form-label">제목:</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="inputtitle" placeholder="아무제목">
+                                        </div>
+                                    </div>
+                                    
+                               </div>
+
+                               <div class ="row write">
+                                    <div class="col-sm-1">   
+                                    </div>
+                                <div class="form-group row">
+                                  <label for="inputwrite" class="col-sm-3 col-form-label">내용:</label>
+                                  <div class="col-sm-8">
+                                    <textarea class="form-control" id="inputwrite" placeholder="아무내용" rows="3"></textarea>
+                                  </div>
+                              </div>
+                              </div>
+
+                              <div class ="row pd">
+
+                                <div class="form-group row">
+                                    <label for="inputpw" class="col-sm-5 col-form-label" style="margin-left: 10px;">비밀번호:</label>
+                                    <div class="col-sm-6">
+                                      <input type="text" class="form-control" id="inputpw" placeholder="아무비번">
+                                    </div>
+                                </div>
+                              </div>
+
+                              <div class ="row pd">
+                                
+                               
+                               <div class="col-12 m-auto">
+                                <button type="button" class="btn btn-outline-primary" style="margin-left: 120px;">보내기</button>
+                                </div>
+                               </div>
+
                                 
                             </div>
                         </div>
