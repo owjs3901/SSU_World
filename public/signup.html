@@ -29,35 +29,29 @@
 			border: 3px solid skyblue;
 		}
 
-		#select,
-		#id_confirm {
-			display: inline-block;
-			width: 120px;
-			background: #eee;
-			border: 1px solid #27a;
-			border-radius: 3px;
-			padding: 4px;
-		}
+		
 
-		#id_confrim:hover {
-			background: #fff;
-			color: #27a;
-		}
+		
 
 		table th,
 		table td {
 			padding: 20px;
 		}
 
-		table tbody td>input {
-			width: 120px;
-			border: 1px solid #27a;
-			border-radius: 3px;
-			padding: 4px;
+		
+
+		
+
+		.row{
+			margin-top : 45px;
 		}
 
-		.txt_r {
-			text-align: right;
+		.btn{
+			margin-bottom: 30px;
+		}
+
+		#main{
+			margin-top: 55px;
 		}
 	</style>
 </head>
@@ -84,71 +78,76 @@
             </div>
         </div>
 	</nav>
-	<div class="container" id="main">
 
-		<div id="wrap">
-			<thead>
-				<h1>&nbsp&nbsp&nbsp&nbsp&nbsp숭실월드 회원 가입</h1>
-			</thead>
-			<form action="http://mbs-b.com/register" method="post">
-				<table>
-					<colgroup>
-						<col width="100px" />
-						<col width="*" />
-					</colgroup>
-					<tbody>
-						<tr>
-							<th><label for="s_id">ID</label></th>
-							<td id="add">
-								<input type="email" id="s_id" name="id" />
-								<select id="select" name="s_email">
-									<option value="nate">@ nate.com</option>
-									<option value="naver">@ naver.com</option>
-									<option value="gmail">@ gmail.com</option>
-									<option value="daum">@ daum.net</option>
-								</select>
-								<input type="button" value="아이디 확인" id="id_confrim" onclick="">
+	<div class="container" id="main" style="border: 3px solid skyblue;">
+			<div class ="row">
+				<div class="col-3">
+					
+				</div>
+				<div class="col align-self-center" style="margin-top: 20px;">
+					<label for="IdInput">ID </label>
+					<input type="email" class="form-control" id="IdInput" placeholder="ID@example.com">
+				  </div>
+				  <div class="col-3">
+				  	</br>
+					</br>
+					</br>
+					<button type="button" class="btn btn-secondary btn-sm" >중복확인</button>
+				</div>
+			</div>
+			
+			<div class ="row">
+				<div class="col-3">
+					
+				</div>
+				<div class="col align-self-center">
+					<label for="PwInput">PW</label>
+					<input type="password" class="form-control" id="PwInput" placeholder="PassWord">
+				  </div>
+				  <div class="col-3">
+					
+				</div>
+			</div>
+			
+			<div class ="row">
+				<div class="col-3">
+					
+				</div>
+				<div class="col align-self-center">
+					<label for="NameInput">NAME</label>
+					<input type="email" class="form-control" id="NameInput" placeholder="Name">
+				  </div>
+				  <div class="col-3">
+					
+				</div>
+			</div>
 
-							</td>
-						</tr>
-						<tr>
-							<th><label for="s_pw">PW</label></th>
-							<td>
-								<input type="text" id="s_pw" name="pw" />
+			<div class ="row">
+				<div class="col-3">
+					
+				</div>
+				<div class="col align-self-center">
+					<label for="BirthInput">BIRTH</label>
+					<input type="email" class="form-control" id="BirthInput" placeholder="Birth">
+				  </div>
+				  <div class="col-3">
+					
+				</div>
+			</div>
 
-							</td>
-						</tr>
-						<tr>
-							<th><label for="s_name">NAME</label></th>
-							<td>
-								<input type="text" id="s_name" name="name" />
-							</td>
-						</tr>
-						<tr>
-							<th><label for="s_addr">BIRTH</label></th>
-							<td>
-								<input type="text" id="s_addr" name="addr" />
-							</td>
-						</tr>
-						<!--  	<tr>
-						<th><label for="s_phone">PHONE</label></th>
-						<td>
-							<input type="text" id="s_phone" name="phone" class="phone"/>
-							- <input type="text" name="phone" class="phone"/>
-							- <input type="text" name="phone" class="phone"/>
-						</td>
-					</tr>	-->
-					</tbody>
-					<tfoot>
-						<tr>
-							<td colspan="2">
-								<input type="button" id="btn" value="회원가입"/>
-							</td>
-						</tr>
-					</tfoot>
-				</table>
-			</form>
-		</div>
+			<div class ="row logg">
+				<div class="col-5">
+					
+				</div>
+				<div class="col align-self-center">
+					<button type="button" class="btn btn-outline-primary">회원가입</button>
+				</div>
+				<div class="col-3">
+					
+				</div>
+				  
+			</div>
+		   
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
