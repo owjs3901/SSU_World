@@ -85,7 +85,7 @@
             padding: 25px 50px;
             /* width: 800px; */
             height: 500px;
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             border-radius: 10%;
             background-color: #8dccff;
             position: relative;
@@ -95,6 +95,7 @@
             /* margin-top: 25px; */
             /* margin-left: 20px; */
             /* width:35%; */
+            padding: 5px;
             height: 450px;
             border-radius: 10%;
             float: left;
@@ -106,12 +107,13 @@
             /* margin-top: 25px; */
             /* margin-left: 200px; */
             /* width: 50%; */
+            padding: 5px;
             height: 450px;
             border-radius: 10%;
             background-color: #fff;
             position: relative;
             /* left: -7%; */
-            z-index: 1;
+            /* z-index: 1; */
         }
 
         .diary_ring {
@@ -122,7 +124,7 @@
             float: left;
             position: relative;
             /* left: -3%; */
-            z-index: 2;
+            /* z-index: 2; */
         }
 
         .box {
@@ -138,18 +140,17 @@
             object-fit: cover;
         }
 
-        .today {
+        /* .today {
             margin: auto;
-            /* width: 160px; */
             height: 25px;
             background-color: #dcdcdc;
-        }
+        } */
 
         .rankbox {
             margin-left: 30px;
             width: 80%;
             border-radius: 10%;
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             overflow: hidden;
             object-fit: fill;
         }
@@ -168,7 +169,7 @@
         .writebox {
             width: 95%;
             height: 30%;
-            border: 1px solid #000000;
+            border: 1px solid #5bc0de;
             margin-top: 30px;
             margin-left: 10px;
             text-align: center;
@@ -181,12 +182,16 @@
             text-align: center;
             font-size: 16px;
         }
+
+        #main{
+			margin-top: 50px;
+			border: 3px solid skyblue;
+		}
     </style>
 </head>
 
 <body>
     <header>
-
         <div class="container">
             <a href="profilebox.html"><img src="img/title.png"></a>
         </div>
@@ -194,7 +199,7 @@
     <nav>
         <div class="container">
             <div class="row">
-                <span class="common1"><b>SSUWORLD</b></span>
+                <a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
                 <div class="mbox">
                     <img class="mprofile" src="img/profile.jpg">
                 </div>
@@ -212,11 +217,9 @@
         <div class="row">
             <div class="col-9 col-sm-9 container m-auto">
                 <div class="row">
-                    <!-- <div class="col-12 container">
-                        <div class="col-"> -->
                     <div class="diary1 col-12 col-sm-12 container">
                         <div class="row">
-                            <div class="diary2 col-3 col-sm-3">
+                            <div class="diary2 container col-3 col-sm-3">
                                 <div class="box">
                                     <img class="profile" src="img/profile.jpg">
                                 </div>
@@ -229,14 +232,14 @@
                                 <p id="birth">
                                     BIRTH
                                 </p>
-                                <div class="today">
-                                    <p style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
-                                </div>
+                                <!-- <div class="today"> -->
+                                    <p class="alert-warning" style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
+                                <!-- </div> -->
                             </div>
                             <img class="diary_ring col-1 col-sm-1" src="img/diary_ring.png" style="padding: 0px;">
                             <div class="diary3 col-8 col-sm-8" style="overflow-y: auto;">
-                                <p style="font-size: 30px; text-align: center;"><b>방명록</b></p>
-                                <button type="button" class="btn btn-primary btn" style=" font-size: 12px;">방명록
+                                <h4 class="bg-primary text-white m-auto text-center" style="width: 200px;">방명록</h4>
+                                <button type="button" class="btn btn-warning text-white ml-3 mt-5" style=" font-size: 12px;">방명록
                                     작성</button>
                                 <div class="list-group">
                                     <div class="writebox">
@@ -245,11 +248,11 @@
                                             <small>방명록 날짜</small>
                                         </div>
                                         <p class="mb-1">방명록 본문</p>
-                                        <small style="margin-left: 275px;">쓴사람 이름</small>
-                                        <button type="button" class="btn btn-primary btn"
-                                            style="width: 30px; font-size: 5px;">수정</button>
-                                        <button type="button" class="btn btn-primary btn"
-                                            style="width: 30px; font-size: 5px;">삭제</button>
+                                        <small>쓴사람 이름</small>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            style="width: 30px; height: 20px; font-size: 5px;">수정</button>
+                                        <button type="button" class="btn btn-outline-danger"
+                                            style="width: 30px; height: 20px; font-size: 5px;">삭제</button>
                                     </div>
 
                                     <div class="writebox">
@@ -258,11 +261,11 @@
                                             <small>방명록 날짜</small>
                                         </div>
                                         <p class="mb-1">방명록 본문</p>
-                                        <small style="margin-left: 275px;">쓴사람 이름</small>
-                                        <button type="button" class="btn btn-primary btn"
-                                            style="width: 30px; font-size: 5px;">수정</button>
-                                        <button type="button" class="btn btn-primary btn"
-                                            style="width: 30px; font-size: 5px;">삭제</button>
+                                        <small>쓴사람 이름</small>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            style="width: 30px; height: 20px; font-size: 5px;">수정</button>
+                                        <button type="button" class="btn btn-outline-danger"
+                                            style="width: 30px; height: 20px; font-size: 5px;">삭제</button>
                                     </div>
 
                                     <div class="writebox">
@@ -271,18 +274,16 @@
                                             <small>방명록 날짜</small>
                                         </div>
                                         <p class="mb-1">방명록 본문</p>
-                                        <small style="margin-left: 275px;">쓴사람 이름</small>
-                                        <button type="button" class="btn btn-primary btn"
-                                            style="width: 30px; font-size: 5px;">수정</button>
-                                        <button type="button" class="btn btn-primary btn"
-                                            style="width: 30px; font-size: 5px;">삭제</button>
+                                        <small>쓴사람 이름</small>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            style="width: 30px; height: 20px; font-size: 5px;">수정</button>
+                                        <button type="button" class="btn btn-outline-danger"
+                                            style="width: 30px; height: 20px; font-size: 5px;">삭제</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- </div>
-                    </div> -->
                 </div>
             </div>
             <div class="col-3 col-sm-3 m-auto">

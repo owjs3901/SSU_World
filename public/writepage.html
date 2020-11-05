@@ -85,7 +85,7 @@
             padding: 25px 50px;
             /* width: 800px; */
             height: 500px;
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             border-radius: 10%;
             background-color: #8dccff;
             position: relative;
@@ -95,6 +95,7 @@
             /* margin-top: 25px; */
             /* margin-left: 20px; */
             /* width:35%; */
+            padding: 5px;
             height: 450px;
             border-radius: 10%;
             float: left;
@@ -106,6 +107,7 @@
             /* margin-top: 25px; */
             /* margin-left: 200px; */
             /* width: 50%; */
+            padding: 5px;
             height: 450px;
             border-radius: 10%;
             background-color: #fff;
@@ -138,18 +140,17 @@
             object-fit: cover;
         }
 
-        .today {
+        /* .today {
             margin: auto;
-            /* width: 160px; */
             height: 25px;
             background-color: #dcdcdc;
-        }
+        } */
 
         .rankbox {
             margin-left: 30px;
             /* width: 80%; */
             border-radius: 10%;
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             overflow: hidden;
             object-fit: fill;
         }
@@ -187,6 +188,10 @@
             width: 10px;
             height: 5px;
         }
+        #main{
+			margin-top: 50px;
+			border: 3px solid skyblue;
+		}
     </style>
 </head>
 
@@ -200,7 +205,7 @@
     <nav>
         <div class="container">
             <div class="row">
-                <span class="common1"><b>SSUWORLD</b></span>
+                <a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
                 <div class="mbox">
                     <img class="mprofile" src="img/profile.jpg">
                 </div>
@@ -234,59 +239,34 @@
                                     BIRTH
                                 </p>
                                 <div class="today">
-                                    <p style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
+                                    <p class="alert-warning" style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
                                 </div>
                             </div>
                             <img class="diary_ring col-1 col-sm-1" src="img/diary_ring.png" style="padding: 0px;">
-                            <div class="diary3 col-8 col-sm-8" style="overflow-y: auto;">
-                                <p style="font-size: 30px; text-align: center;"><b>방명록 작성</b></p>
-
-                                <div class="row write">
-
-                                    <div class="col-sm-1">
-
+                            <div class="diary3 col-8 col-sm-8" style="overflow-y: auto; overflow-x: hidden;">
+                                <h4 class="bg-primary text-white m-auto text-center" style="width: 200px;">방명록 작성</h4>
+                                <div class="row mt-5">
+                                    <div class="col-11 col-sm-11 input-group m-auto">
+                                        <input type="text" class="form-control" placeholder="이름" aria-label="name"
+                                            aria-describedby="basic-addon2">
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="inputtitle" class="col-sm-3 col-form-label">제목:</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputtitle" placeholder="아무제목">
-                                        </div>
-                                    </div>
-
                                 </div>
-
-                                <div class="row write">
-                                    <div class="col-sm-1">
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputwrite" class="col-sm-3 col-form-label">내용:</label>
-                                        <div class="col-sm-8">
-                                            <textarea class="form-control" id="inputwrite" placeholder="아무내용"
-                                                rows="3"></textarea>
-                                        </div>
+                                <div class="row mt-4">
+                                    <div class="col-11 col-sm-11 input-group m-auto">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"
+                                        placeholder="내용"></textarea>
                                     </div>
                                 </div>
 
-                                <div class="row pd">
-
-                                    <div class="col align-self-end" style="border: 1px solid black;">
-                                        <label for="inputpw" class="col-sm col-form-label"
-                                            style="margin-left: 10px;">비밀번호:</label>
-                                        <div class="col-sm">
-                                            <input type="text" class="form-control" id="inputpw" placeholder="아무비번">
-                                        </div>
+                                <div class="row mt-5">
+                                    <div class="col-2 col-sm-2">
                                     </div>
-                                </div>
-
-                                <div class="row pd">
-
-                                    <div class="col-12 m-auto">
-                                        <button type="button" class="btn btn-outline-primary"
-                                            style="margin-left: 120px;">보내기</button>
+                                    <div class="col-5 col-sm-5 input-group">
+                                        <input type="text" class="form-control" placeholder="비밀번호" aria-label="name"
+                                            aria-describedby="basic-addon2">
                                     </div>
+                                    <button type="button" class="col-2 col-sm-2 btn btn-warning text-white mt-1">보내기</button>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
