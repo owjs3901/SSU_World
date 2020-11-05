@@ -2,71 +2,72 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <title>회원 가입</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./style.css">
+  <title>홈</title>
 
-    <style>
-        
-        #main {
-			width: 670px;
-			margin: 30px auto;
-			border: 2px solid rgb(238, 232, 226);
+  <style>
+    /* #main {
+      width: 670px;
+      margin: 30px auto;
+      border: 2px solid rgb(238, 232, 226);
+    } */
+    #main {
+			margin-top: 50px;
+			border: 3px solid skyblue;
 		}
-
-       
-        
-    </style>
+  </style>
 
 </head>
 
 <body>
-    <header>
-
-		<div class="container">
-			<img src="img/title.png">
-		</div>
-	</header>
-	<nav>
-		<div class="container">
-            <div class="row">
-                <span  class="common1"><b>SSUWORLD</b></span>
-                 <div class="mbox">
-                    <img class="mprofile" src="img/profile.jpg">
-                </div> 
-                <span class="mt-3" >님 환영합니다.</span>
-                <div class="login">
-                    <input class="btn btn-outline-primay btn-light" type="submit" value="Login">
-                    <input class="btn btn-outline-primay btn-light" type="submit" value="Logout">
-                </div>
-            </div>
+  <header>
+    <div class="container">
+      <a href="profilebox.html"><img src="img/title.png"></a>
+    </div>
+  </header>
+  <nav>
+    <div class="container">
+      <div class="row">
+        <a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
+        <div class="mbox">
+          <img class="mprofile" src="img/profile.jpg">
         </div>
-	</nav>
-    
-    <div class="container" id="main">
-        <div class = "card-deck">
-        
-         <div class="col-6 pt-5">
-            <div class="card text-center text-black border-info m-auto" >
+        <span class="mt-3">님 환영합니다.</span>
+        <!-- <div class="login">
+          <input class="btn btn-outline-primay btn-light" type="submit" value="Login">
+          <input class="btn btn-outline-primay btn-light" type="submit" value="Logout">
+        </div> -->
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" id="main">
+    <div class ="col-12 col-sm-12 text-center">
+			<h2 class="bg-primary text-white"><b>Today Ranking</b></h2>
+		</div>
+    <div class="card-deck mt-5">
+      <div class="col-6 pt-5">
+        <div class="card text-center text-black border-info m-auto">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Name1</h5>
             <p class="card-text">평범한 개발자 입니다.</p>
             <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
           </div>
-          </div>
         </div>
-        
-        <div class="col-6 pt-5">
-        <div class="card text-center text-black border-info m-auto" >
+      </div>
+
+      <div class="col-6 pt-5">
+        <div class="card text-center text-black border-info m-auto">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Name2</h5>
@@ -74,10 +75,10 @@
             <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
           </div>
         </div>
-        </div>
-        
-        <div class="col-6 pt-5">
-        <div class="card text-center text-black border-info m-auto" >
+      </div>
+
+      <div class="col-6 pt-5">
+        <div class="card text-center text-black border-info m-auto">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Name3</h5>
@@ -85,47 +86,60 @@
             <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
           </div>
         </div>
-        </div>
-        
-        <div class="col-6 pt-5">
-        <div class="card text-center text-black border-info m-auto" >
+      </div>
+
+      <div class="col-6 pt-5">
+        <div class="card text-center text-black border-info m-auto">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Name4</h5>
             <p class="card-text">평범한 개발자 입니다.</p>
             <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
+          </div>
         </div>
-        </div> 
-        </div>
-        
-        </div>
-        </div>
+      </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    </div>
+  </div>
 
-        <script>
-            fetch("http://mbs-b.com:1000/user")
-            .then(res => {
-                if(res.status == 200)
-                return res.json()
-                else throw new Error('err')
-            })
-            .then(res =>{
-                document.getElementById("name").innerHTML = res.name
-                document.getElementById("message").innerHTML = res.message
-                document.getElementById("birth").innerHTML = res.birth
-            })
+  <div id="footer">
+    <div class="footer_area">
+      <address>
+        &nbsp;서울특별시 동작구 상도동 <br />
+        &nbsp;학생정보 : 숭실대학교 <br />
+        &nbsp;코드정보 : https://github.com/owjs3901/SSU_World <br />
+      </address>
+      <p class="copyright">
+        COPYRIGHT (c) ALL rights reserved.
+      </p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <script>
+    fetch("http://mbs-b.com:1000/user")
+      .then(res => {
+        if (res.status == 200)
+          return res.json()
+        else throw new Error('err')
+      })
+      .then(res => {
+        document.getElementById("name").innerHTML = res.name
+        document.getElementById("message").innerHTML = res.message
+        document.getElementById("birth").innerHTML = res.birth
+      })
 
 
-        </script>
+  </script>
 
 
 </body>

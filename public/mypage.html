@@ -85,11 +85,12 @@
             padding: 25px 50px;
             /* width: 800px; */
             height: 500px;
-            border:1px solid #000000;
+            border: 1px solid #000000;
             border-radius: 10%;
             background-color: #8dccff;
             position: relative;
         }
+
         .diary2 {
             /* margin-top: 25px; */
             /* margin-left: 20px; */
@@ -100,6 +101,7 @@
             background-color: #fff;
 
         }
+
         .diary3 {
             /* margin-top: 25px; */
             /* margin-left: 200px; */
@@ -111,7 +113,8 @@
             /* left: -7%; */
             /* z-index: 1; */
         }
-        .diary_ring{
+
+        .diary_ring {
             margin-top: 25px;
             padding: 0px;
             /* margin-left: -3%; */
@@ -121,74 +124,86 @@
             /* left: -3%; */
             /* z-index: 2; */
         }
+
         .box {
             /* width: 80%; */
             height: 200px;
             border-radius: 70%;
             overflow: hidden;
         }
+
         .profile {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .today{
+
+        .today {
             margin: auto;
             /* width: 160px; */
             height: 25px;
             background-color: #dcdcdc;
         }
 
-        .rankbox{
+        .rankbox {
             margin-left: 30px;
             width: 80%;
             border-radius: 10%;
-            border:1px solid #000000;
+            border: 1px solid #000000;
             overflow: hidden;
             object-fit: fill;
         }
-        .rank_table{
-            font-size : 10px;
+
+        .rank_table {
+            font-size: 10px;
             width: 100%;
         }
-        th, td{
+
+        th,
+        td {
             line-height: 1px;
             height: 2px;
         }
-       
-       .writebox{
-           width: 95%;
-           height: 30%;
-           border:1px solid #000000;
-           margin-top: 30px;
-           margin-left: 10px;
-           text-align: center;
-       }
 
-       #name, #message, #birth{
+        .writebox {
+            width: 95%;
+            height: 30%;
+            border: 1px solid #000000;
+            margin-top: 30px;
+            margin-left: 10px;
+            text-align: center;
+        }
+
+        #name,
+        #message,
+        #birth {
             margin-top: 40px;
             text-align: center;
             font-size: 16px;
-       }
+        }
+
+        #main{
+			margin-top: 50px;
+			border: 3px solid skyblue;
+		}
     </style>
 </head>
 
 <body>
     <header>
-
         <div class="container">
-            <img src="img/title.png">
+            <a href="profilebox.html"><img src="img/title.png"></a>
         </div>
     </header>
     <nav>
         <div class="container">
             <div class="row">
-                <span  class="common1"><b>SSUWORLD</b></span>
-                 <div class="mbox">
+                <a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
+                <div class="mbox">
                     <img class="mprofile" src="img/profile.jpg">
-                </div> 
-                <span class="mt-3" id="mname" >NAME</span>
-                <span class="mt-3" >님 환영합니다.</span>
+                </div>
+                <span class="mt-3" id="mname">NAME</span>
+                <span class="mt-3">님 환영합니다.</span>
                 <!-- <div class="login">
                     <input class="btn btn-outline-primay btn-light" type="submit" value="Login">
                     <input class="btn btn-outline-primay btn-light" type="submit" value="Logout">
@@ -217,13 +232,15 @@
                                     BIRTH
                                 </p>
                                 <div class="today">
-                                    <p class="col-12 col-sm-12" style="text-align: center;">today: <b>12</b> total: <b>50</b></p>
+                                    <p class="col-12 col-sm-12" style="text-align: center;">today: <b>12</b> total:
+                                        <b>50</b></p>
                                 </div>
                             </div>
                             <img class="diary_ring col-1 col-sm-1" src="img/diary_ring.png" style="padding: 0px;">
                             <div class="diary3 col-8 col-sm-8" style="overflow-y: auto;">
                                 <p style="font-size: 30px; text-align: center;"><b>방명록</b></p>
-                                <button type = "button" class="btn btn-primary btn" style=" font-size: 12px;">방명록 작성</button>
+                                <button type="button" class="btn btn-primary btn" style=" font-size: 12px;">방명록
+                                    작성</button>
                                 <div class="list-group">
                                     <div class="writebox">
                                         <div class="d-flex w-100 justify-content-between">
@@ -232,30 +249,36 @@
                                         </div>
                                         <p class="mb-1">방명록 본문</p>
                                         <small style="margin-left: 275px;">쓴사람 이름</small>
-                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
-                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>               
+                                        <button type="button" class="btn btn-primary btn"
+                                            style="width: 30px; font-size: 5px;">수정</button>
+                                        <button type="button" class="btn btn-primary btn"
+                                            style="width: 30px; font-size: 5px;">삭제</button>
                                     </div>
 
                                     <div class="writebox">
                                         <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">방명록 제목</h5>
-                                        <small>방명록 날짜</small>
+                                            <h5 class="mb-1">방명록 제목</h5>
+                                            <small>방명록 날짜</small>
                                         </div>
                                         <p class="mb-1">방명록 본문</p>
                                         <small style="margin-left: 275px;">쓴사람 이름</small>
-                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
-                                        <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>               
+                                        <button type="button" class="btn btn-primary btn"
+                                            style="width: 30px; font-size: 5px;">수정</button>
+                                        <button type="button" class="btn btn-primary btn"
+                                            style="width: 30px; font-size: 5px;">삭제</button>
                                     </div>
-                                    
+
                                     <div class="writebox">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">방명록 제목</h5>
-                                        <small>방명록 날짜</small>
-                                    </div>
-                                    <p class="mb-1">방명록 본문</p>
-                                    <small style="margin-left: 275px;">쓴사람 이름</small>
-                                    <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">수정</button>               
-                                    <button type = "button" class="btn btn-primary btn" style="width: 30px; font-size: 5px;">삭제</button>               
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">방명록 제목</h5>
+                                            <small>방명록 날짜</small>
+                                        </div>
+                                        <p class="mb-1">방명록 본문</p>
+                                        <small style="margin-left: 275px;">쓴사람 이름</small>
+                                        <button type="button" class="btn btn-primary btn"
+                                            style="width: 30px; font-size: 5px;">수정</button>
+                                        <button type="button" class="btn btn-primary btn"
+                                            style="width: 30px; font-size: 5px;">삭제</button>
                                     </div>
                                 </div>
                             </div>
@@ -266,36 +289,36 @@
             <div class="col-3 col-sm-3 m-auto">
                 <div class="rankbox">
                     <table class=rank_table width=5% height=1% border=0>
-                        <tr class = "table-primary">
-                           <th>#</th>
-                           <th colspan="2">Today Ranking</th>
-                        </tr1>
-                        <tr class = "table-secondary">
-                           <td>1</td>
-                           <td align=center colspan="2">Mark</td>
+                        <tr class="table-primary">
+                            <th>#</th>
+                            <th colspan="2">Today Ranking</th>
+                            </tr1>
+                        <tr class="table-secondary">
+                            <td>1</td>
+                            <td align=center colspan="2">Mark</td>
                         </tr>
-                         <tr class = "table-success">
-                           <td>2</td>
-                           <td align=center colspan="2">Job</td>
-                         </tr>
-                         <tr class = "table-danger">
-                           <td>3</td>
-                           <td align=center colspan="2">first</td>
-                         </tr>
-                         <tr class = "table-warning">
-                           <td>4</td>
-                           <td align=center colspan="2">first</td>
-                         </tr>
-                         <tr class = "table-info">
-                           <td>5</td>
-                           <td align=center colspan="2">first</td>
-                         </tr>
-                   </table>
+                        <tr class="table-success">
+                            <td>2</td>
+                            <td align=center colspan="2">Job</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td>3</td>
+                            <td align=center colspan="2">first</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td>4</td>
+                            <td align=center colspan="2">first</td>
+                        </tr>
+                        <tr class="table-info">
+                            <td>5</td>
+                            <td align=center colspan="2">first</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
         <div class="row mt-5">
-            
+
         </div>
         <div class="row mt-3">
             <div class="col-6 col-sm-6 input-group m-auto">
@@ -307,8 +330,20 @@
         </div>
 
     </div>
-    
-    
+
+    <div id="footer">
+        <div class="footer_area">
+            <address>
+                &nbsp;서울특별시 동작구 상도동 <br />
+                &nbsp;학생정보 : 숭실대학교 <br />
+                &nbsp;코드정보 : https://github.com/owjs3901/SSU_World <br />
+            </address>
+            <p class="copyright">
+                COPYRIGHT (c) ALL rights reserved.
+            </p>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -322,11 +357,11 @@
     <script>
         fetch("http://mbs-b.com:1000/user")
             .then(res => {
-                if(res.status == 200)
-                return res.json()
+                if (res.status == 200)
+                    return res.json()
                 else throw new Error('err')
             })
-            .then(res =>{
+            .then(res => {
                 document.getElementById("mname").innerHTML = res.name
 
                 document.getElementById("name").innerHTML = res.name

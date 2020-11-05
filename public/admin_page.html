@@ -12,7 +12,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="./style.css">
-	<title>회원 가입</title>
+	<title>관리자 페이지</title>
 
 	<style>
 		.btn {
@@ -21,6 +21,7 @@
 			text-align: center;
 			padding: 0px;
 		}
+
 		.btn a {
 			display: block;
 			width: 100%;
@@ -77,6 +78,10 @@
 		.txt_r {
 			text-align: right;
 		}
+		#main {
+			margin-top: 50px;
+			border: 3px solid skyblue;
+		}
 	</style>
 </head>
 
@@ -84,43 +89,119 @@
 	<header>
 
 		<div class="container">
-			<a href ="메인페이지">
-				<img src="img/title.png">
+			<a href="메인페이지">
+				<a href="profilebox.html"><img src="img/title.png"></a>
 			</a>
 		</div>
 	</header>
 	<nav>
 		<div class="container">
-            <div class="row">
-                <span style="color: #fff; font-size: 35px; position: relative; left: 10%;"><b>SSUWORLD</b></span>
-                <span class="mt-3" style="color: #fff; font-size: 20px; position: relative; left: 65%;">관리자님 환영합니다.</span>
-            </div>
-        </div>
+			<div class="row">
+				<a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
+				<span class="mt-3">관리자님 환영합니다.</span>
+			</div>
+		</div>
 	</nav>
-	<div class="container" id="main">
-        <div class ="row pt-5 pb-5">
-             <div class="col-8 m-auto">
-                <table width=100% height=100% border=0>
-					 
-					  
+	<div class="container " id="main">
+		<div class ="col-12 col-sm-12 text-center">
+			<h2 class="bg-primary text-white">SIGNUP</h2>
+		</div>
+		<div class="row mt-5">
+			<div class="col-10 m-auto">
+				<table style="width:100%; height:100%; border:0">
+					<tr class="table-primary">
+						<th>#</th>
+						<th>Name</th>
+						<th></th>
+						</tr1>
+					<tr class="table-secondary">
+						<td>1</td>
+						<td>Mark</td>
+						<td style="width: 10%;">
+							<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+						</td>
+					</tr>
+					<tr class="table-success">
+						<td>2</td>
+						<td>Job</td>
+						<td>
+							<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+						</td>
+					</tr>
+					<tr class="table-danger">
+						<td>3</td>
+						<td>first name</td>
+						<td>
+							<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+						</td>
+					</tr>
+					<tr class="table-warning">
+						<td>4</td>
+						<td>first name</td>
+						<td>
+							<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+						</td>
+					</tr>
+					<tr class="table-info">
+						<td>5</td>
+						<td>first name</td>
+						<td>
+							<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+						</td>
+					</tr>
+					<tr class="table-light">
+						<td>6</td>
+						<td>first name</td>
+						<td>
+							<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+						</td>
+					</tr>
+					<tr class="table-dark">
+						<td>7</td>
+						<td>first name</td>
+						<td>
+							<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+						</td>
+					</tr>
 				</table>
-            </div>
-        </div>
+			</div>
+		</div>
 	</div>
-	
-<script>
-const a = "<tr class = \"table-primary\">\
-		<th>#</th>\
-		<th>FirstName</th>\
-		<th>Last Name</th>\
-		<th>Username</th>\
-		<th></th>\
-	  </tr1>"
-const e = document.getElementById("main");
-e.firstChild.firstChild.firstChild.firstChild
-</script>
 
-	
+	<div id="footer">
+		<div class="footer_area">
+			<address>
+				&nbsp;서울특별시 동작구 상도동 <br />
+				&nbsp;학생정보 : 숭실대학교 <br />
+				&nbsp;코드정보 : https://github.com/owjs3901/SSU_World <br />
+			</address>
+			<p class="copyright">
+				COPYRIGHT (c) ALL rights reserved.
+			</p>
+		</div>
+	</div>
+
+	<script>
+		window.addEventListener('scroll', function () {
+			var bodyEl = document.querySelector('body');
+			var bodyHeight = bodyEl.offsetHeight;
+			var scrollable = bodyHeight - window.innerHeight;
+			var progressEl = document.querySelector('.progress');
+			var per = Math.floor(window.scrollY / scrollable * 100) + '%';
+			progressEl.style.width = per;
+		});
+		const a = "<tr class = \"table-primary\">\
+      <th>#</th>\
+      <th>FirstName</th>\
+      <th>Last Name</th>\
+      <th>Username</th>\
+      <th></th>\
+     </tr1>"
+		const e = document.getElementById("main");
+		e.firstChild.firstChild.firstChild.firstChild
+	</script>
+
+
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

@@ -22,36 +22,37 @@
 			padding: 0px;
 		}
 
-		
+
 		div#wrap {
 			width: 800px;
 			margin: 30px auto;
 			border: 3px solid skyblue;
 		}
 
-		
 
-		
+
+
 
 		table th,
 		table td {
 			padding: 20px;
 		}
 
-		
 
-		
 
-		.row{
-			margin-top : 45px;
+
+
+		.row {
+			margin-top: 45px;
 		}
 
-		.btn{
+		.btn {
 			margin-bottom: 30px;
 		}
 
-		#main{
-			margin-top: 55px;
+		#main {
+			margin-top: 50px;
+			border: 3px solid skyblue;
 		}
 	</style>
 </head>
@@ -60,94 +61,81 @@
 	<header>
 
 		<div class="container">
-			<img src="img/title.png">
+			<a href="profilebox.html"><img src="img/title.png"></a>
 		</div>
 	</header>
 	<nav>
-		<div class="container">
-            <div class="row">
-                <span  class="common1"><b>SSUWORLD</b></span>
-                 <div class="mbox">
-                    <img class="mprofile" src="img/profile.jpg">
-                </div> 
-                <span class="mt-3" >님 환영합니다.</span>
-                <div class="login">
-                    <input class="btn btn-outline-primay btn-light" type="submit" value="Login">
-                    <input class="btn btn-outline-primay btn-light" type="submit" value="Logout">
-                </div>
-            </div>
-        </div>
+		<a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
 	</nav>
 
-	<div class="container" id="main" style="border: 3px solid skyblue;">
-			<div class ="row">
-				<div class="col-3">
-					
-				</div>
-				<div class="col align-self-center" style="margin-top: 20px;">
-					<label for="IdInput">ID </label>
-					<input type="email" class="form-control" id="IdInput" placeholder="ID@example.com">
-				  </div>
-				  <div class="col-3">
-				  	</br>
-					</br>
-					</br>
-					<button type="button" class="btn btn-secondary btn-sm" >중복확인</button>
-				</div>
+	<div class="container" id="main">
+		<div class ="col-12 col-sm-12 text-center">
+			<h2 class="bg-primary text-white">SIGNUP</h2>
+		</div>
+		<div class="row">
+			<div class="col-3">
 			</div>
-			
-			<div class ="row">
-				<div class="col-3">
-					
-				</div>
-				<div class="col align-self-center">
-					<label for="PwInput">PW</label>
-					<input type="password" class="form-control" id="PwInput" placeholder="PassWord">
-				  </div>
-				  <div class="col-3">
-					
-				</div>
+			<div class="col align-self-center">
+				<label for="IdInput">ID</label>
+				<input type="email" class="form-control" id="IdInput" placeholder="ID@example.com">
 			</div>
-			
-			<div class ="row">
-				<div class="col-3">
-					
-				</div>
-				<div class="col align-self-center">
-					<label for="NameInput">NAME</label>
-					<input type="email" class="form-control" id="NameInput" placeholder="Name">
-				  </div>
-				  <div class="col-3">
-					
-				</div>
+			<div class="col-3 mt-5">
+				<button type="button" class="btn btn-secondary btn-sm" style="height: 30px;">중복확인</button>
 			</div>
+		</div>
 
-			<div class ="row">
-				<div class="col-3">
-					
-				</div>
-				<div class="col align-self-center">
-					<label for="BirthInput">BIRTH</label>
-					<input type="email" class="form-control" id="BirthInput" placeholder="Birth">
-				  </div>
-				  <div class="col-3">
-					
-				</div>
+		<div class="row">
+			<div class="col-3">
 			</div>
+			<div class="col align-self-center">
+				<label for="PwInput">PW</label>
+				<input type="password" class="form-control" id="PwInput" placeholder="PassWord">
+			</div>
+			<div class="col-3">
+			</div>
+		</div>
 
-			<div class ="row logg">
-				<div class="col-5">
-					
-				</div>
-				<div class="col align-self-center">
-					<button type="button" class="btn btn-outline-primary">회원가입</button>
-				</div>
-				<div class="col-3">
-					
-				</div>
-				  
+		<div class="row">
+			<div class="col-3">
 			</div>
-		   
+			<div class="col align-self-center">
+				<label for="NameInput">NAME</label>
+				<input type="email" class="form-control" id="NameInput" placeholder="Name">
+			</div>
+			<div class="col-3">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+			</div>
+			<div class="col align-self-center">
+				<label for="BirthInput">BIRTH</label>
+				<input type="email" class="form-control" id="BirthInput" placeholder="Birth">
+			</div>
+			<div class="col-3">
+			</div>
+		</div>
+
+		<div class="row logg text-center">
+			<div class="col-12 col-sm-12">
+				<button type="button" class="btn btn-warning text-white" style="height: 37px;">회원가입</button>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<div class="footer_area">
+			<address>
+				&nbsp;서울특별시 동작구 상도동 <br />
+				&nbsp;학생정보 : 숭실대학교 <br />
+				&nbsp;코드정보 : https://github.com/owjs3901/SSU_World <br />
+			</address>
+			<p class="copyright">
+				COPYRIGHT (c) ALL rights reserved.
+			</p>
+		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -162,13 +150,13 @@
 
 	<script>
 
-	$(function(){
-		
-		$("#btn").click(function(){
-			//console.log("new person check!");
-			document.forms[0].submit()		
-		});	
-	});
+		$(function () {
+
+			$("#btn").click(function () {
+				//console.log("new person check!");
+				document.forms[0].submit()
+			});
+		});
 
 	</script>
 
