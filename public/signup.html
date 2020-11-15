@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,11 +29,6 @@
 			margin: 30px auto;
 			border: 3px solid skyblue;
 		}
-
-
-
-
-
 		table th,
 		table td {
 			padding: 20px;
@@ -69,59 +65,66 @@
 	</nav>
 
 	<div class="container" id="main">
-		<div class ="col-12 col-sm-12 text-center">
+		<div class="col-12 col-sm-12 text-center">
 			<h2 class="bg-primary text-white">SIGNUP</h2>
 		</div>
-		<div class="row">
-			<div class="col-3 col-sm-3">
+		<form action="/register" method="POST">
+			<div class="row">
+				<div class="col-3 col-sm-3">
+				</div>
+				<div class="col align-self-center">
+					<label for="IdInput">ID</label>
+					<input required type="email" class="form-control" id="IdInput" placeholder="ID@example.com"
+					name="id"
+						>
+				</div>
+				<div class="col-3 col-sm-3 mt-5">
+					<button type="button" class="btn btn-secondary btn-sm" onclick="overlap()" style="height: 30px;"  >중복확인</button> 
+				</div>
 			</div>
-			<div class="col align-self-center">
-				<label for="IdInput">ID</label>
-				<input type="email" class="form-control" id="IdInput" placeholder="ID@example.com">
-			</div>
-			<div class="col-3 col-sm-3 mt-5">
-				<button type="button" class="btn btn-secondary btn-sm" style="height: 30px;">중복확인</button>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-3 col-sm-3">
+			<div class="row">
+				<div class="col-3 col-sm-3">
+				</div>
+				<div class="col align-self-center">
+					<label for="PwInput">PW</label>
+					<input required type="password" class="form-control" id="PwInput" placeholder="PassWord"
+						name="pw">
+				</div>
+				<div class="col-3 col-sm-3">
+				</div>
 			</div>
-			<div class="col align-self-center">
-				<label for="PwInput">PW</label>
-				<input type="password" class="form-control" id="PwInput" placeholder="PassWord">
-			</div>
-			<div class="col-3 col-sm-3">
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-3 col-sm-3">
+			<div class="row">
+				<div class="col-3 col-sm-3">
+				</div>
+				<div class="col align-self-center">
+					<label for="NameInput">NAME</label>
+					<input required type="text" class="form-control" id="NameInput" placeholder="Name" name="name">
+				</div>
+				<div class="col-3 col-sm-3">
+				</div>
 			</div>
-			<div class="col align-self-center">
-				<label for="NameInput">NAME</label>
-				<input type="email" class="form-control" id="NameInput" placeholder="Name">
-			</div>
-			<div class="col-3 col-sm-3">
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-3 col-sm-3">
+			<div class="row">
+				<div class="col-3 col-sm-3">
+				</div>
+				<div class="col align-self-center">
+					<label for="BirthInput">BIRTH</label>
+					<input required type="date" class="form-control" id="BirthInput" placeholder="Birth"
+						name="birth">
+				</div>
+				<div class="col-3 col-sm-3">
+				</div>
 			</div>
-			<div class="col align-self-center">
-				<label for="BirthInput">BIRTH</label>
-				<input type="email" class="form-control" id="BirthInput" placeholder="Birth">
-			</div>
-			<div class="col-3 col-sm-3">
-			</div>
-		</div>
 
-		<div class="row logg text-center">
-			<div class="col-12 col-sm-12">
-				<button type="button" class="btn btn-warning text-white" style="height: 37px;">회원가입</button>
+			<div class="row logg text-center">
+				<div class="col-12 col-sm-12">
+					<!--<button type="button" class="btn btn-warning text-white" style="height: 37px;">회원가입</button> -->
+					<input type="submit" class="btn btn-warning text-white" value="회원가입" disabled id="com2">
+				</div>
 			</div>
-		</div>
+		</form>
 
 	</div>
 
@@ -148,17 +151,45 @@
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>
 
-	<script>
+		<script>
+			function overlap(){
+				//console.log('aaaaa')
+				const idInput = document.getElementsByName('id')[0];
 
-		$(function () {
+				fetch('/api/overlap', {
+					method:'POST',
+					headers:{
+						'Content-Type':'application/json'
+					},
+					body:JSON.stringify({
+						id:idInput.value
+					})
+				})
+				.then(v=>{
+					if(v.status == 200)
+						return v.json()
+				})
+				.then(v=>{
 
-			$("#btn").click(function () {
-				//console.log("new person check!");
-				document.forms[0].submit()
-			});
-		});
+					//const com1 = document.getElementById("com1")
+					//const com2 = document.getElementById("com1")
+					
+					console.log('aaa', v)
+					if(v.res == true)
+						alert("중복된 아이디입니다.")
+					else{
+						alert("사용가능한 아이디입니다.")
+						console.log(document.getElementById('IdInput'))
+						document.getElementById('IdInput').readOnly = true
+						document.getElementById('com2').disabled = false
+					}
+					
+				})
+			}
+		
 
-	</script>
+		</script>	
+
 
 </body>
 

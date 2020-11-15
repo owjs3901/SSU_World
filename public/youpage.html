@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./style.css">
 
     <title>남 홈페이지</title>
-
+    
     <style>
         .btn {
             width: 80px;
@@ -291,7 +291,7 @@
                     <table class=rank_table width=5% height=1% border=0>
                         <tr class="table-primary">
                             <th>#</th>
-                            <th colspan="2">Today Ranking</th>
+                            <th colspan="2">Ranking</th>
                             </tr1>
                         <tr class="table-secondary">
                             <td>1</td>
@@ -355,32 +355,22 @@
         crossorigin="anonymous"></script>
 
     <script>
-        fetch("http://mbs-b.com:1000/user")
+        fetch("/api/profile_box")
             .then(res => {
                 if (res.status == 200)
                     return res.json()
-                else throw new Error('err')
             })
             .then(res => {
-                document.getElementById("mname").innerHTML = res.name
-
+                if(res){
                 document.getElementById("name").innerHTML = res.name
-                document.getElementById("message").innerHTML = res.message
+                document.getElementById("mname").innerHTML = res.name
+                document.getElementById("message").innerHTML = res.msg
                 document.getElementById("birth").innerHTML = res.birth
+                }
+                else{
+                    console.log("youpage ERROR")
+                }
             })
-            // fetch("http://mbs-b.com:1000/userlist")
-            // .then(res => {
-            //     if(res.status == 200)
-            //     return res.json()
-            //     else throw new Error('err')
-            // })
-            // .then(res => {
-            //     document.getElementById("mname").innerHTML = res.name
-
-            //     document.getElementById("name").innerHTML = res.name
-            //     document.getElementById("message").innerHTML = res.message
-            //     document.getElementById("birth").innerHTML = res.birth
-            // })
     </script>
 </body>
 

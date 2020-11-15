@@ -31,7 +31,7 @@
 <body>
   <header>
     <div class="container">
-      <a href="profilebox.html"><img src="img/title.png"></a>
+      <a href="profilebox.html"><img src="img/title.png" id="pic"></a>
     </div>
   </header>
   <nav>
@@ -41,7 +41,7 @@
         <div class="mbox">
           <img class="mprofile" src="img/profile.jpg">
         </div>
-        <span class="mt-3">님 환영합니다.</span>
+        <span class="mt-3 ">님 환영합니다.</span>
         <!-- <div class="login">
           <input class="btn btn-outline-primay btn-light" type="submit" value="Login">
           <input class="btn btn-outline-primay btn-light" type="submit" value="Logout">
@@ -54,50 +54,9 @@
     <div class ="col-12 col-sm-12 text-center">
 			<h2 class="bg-primary text-white"><b>Today Ranking</b></h2>
 		</div>
-    <div class="card-deck mt-5">
-      <div class="col-6 col-sm-6 pt-5">
-        <div class="card text-center text-black border-info m-auto">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Name1</h5>
-            <p class="card-text">평범한 개발자 입니다.</p>
-            <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
-          </div>
-        </div>
-      </div>
+    <div class="card-deck mt-5" id="ddeck">
 
-      <div class="col-6 col-sm-6 pt-5">
-        <div class="card text-center text-black border-info m-auto">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Name2</h5>
-            <p class="card-text">평범한 개발자 입니다.</p>
-            <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-6 pt-5">
-        <div class="card text-center text-black border-info m-auto">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Name3</h5>
-            <p class="card-text">평범한 개발자 입니다.</p>
-            <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-6 pt-5">
-        <div class="card text-center text-black border-info m-auto">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Name4</h5>
-            <p class="card-text">평범한 개발자 입니다.</p>
-            <a href="#" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
-          </div>
-        </div>
-      </div>
+      
 
     </div>
   </div>
@@ -126,17 +85,44 @@
     crossorigin="anonymous"></script>
 
   <script>
-    fetch("http://mbs-b.com:1000/user")
-      .then(res => {
-        if (res.status == 200)
-          return res.json()
-        else throw new Error('err')
-      })
-      .then(res => {
-        document.getElementById("name").innerHTML = res.name
-        document.getElementById("message").innerHTML = res.message
-        document.getElementById("birth").innerHTML = res.birth
-      })
+
+window.addEventListener('scroll', function () {
+			var bodyEl = document.querySelector('body');
+			var bodyHeight = bodyEl.offsetHeight;
+			var scrollable = bodyHeight - window.innerHeight;
+			var progressEl = document.querySelector('.progress');
+			var per = Math.floor(window.scrollY / scrollable * 100) + '%';
+			progressEl.style.width = per;
+		});
+
+		fetch('/api/userList')
+			.then(v => {
+				if (v.status == 200) {
+					return v.json()
+				}
+			})
+			.then(v => {
+				if (v) {
+					const table = document.getElementById('ddeck')
+					//console.log(table, v)
+					for (let i = 0; i < v.res.length; i++) {
+
+            let row = `<div class="col-12 col-sm-6 pt-5">
+            <div class="card text-center text-black border-info m-auto">
+              <img src="img/title.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${v.res[i].name}</h5>
+                <p class="card-text">${v.res[i].msg}</p>
+                <a href="/mypage.html" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
+              </div>
+          </div>`
+          table.innerHTML += row
+
+					}
+				}
+				else
+					console.log("No User")
+			})
 
 
   </script>
