@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -20,10 +21,14 @@
       margin: 30px auto;
       border: 2px solid rgb(238, 232, 226);
     } */
+    .card-text {
+      content: '1';
+    }
+
     #main {
-			margin-top: 50px;
-			border: 3px solid skyblue;
-		}
+      margin-top: 50px;
+      border: 3px solid skyblue;
+    }
   </style>
 
 </head>
@@ -36,27 +41,45 @@
   </header>
   <nav>
     <div class="container">
-      <div class="row">
-        <a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
-        <div class="mbox">
-          <img class="mprofile" src="img/profile.jpg">
+      <div class="row" style="display: flex;box-sizing: border-box; padding: 7px 0;
+      align-items: center;">
+        <a style="margin-right: auto;" href="profilebox.html" class="common1 ssu-title"><b>SSUWORLD</b></a>
+        <div id="isLoginOk" style="display: flex; flex-direction: row; align-items: center;">
+          <div class="mbox" style="margin-right: 4px;">
+            <a href="mypage.html">
+              <img class="mprofile" id="profileimg" src="img/profile.jpg" herf="profile.html">
+            </a>
+          </div>
+          <span id="mname" style="color: white;"></span>
+          <span style="color: white;">님 환영합니다.</span>
+          <a href="profile.html">
+            <button class="btn btn-outline-primay btn-light" style="margin-left: 8px;">
+              프로필 수정
+            </button>
+          </a>
+          <form action="/logout" method="GET">
+            <input class="btn btn-outline-primay btn-light" type="submit" value="Logout" style="margin-left: 8px;">
+          </form>
         </div>
-        <span class="mt-3 ">님 환영합니다.</span>
-        <!-- <div class="login">
-          <input class="btn btn-outline-primay btn-light" type="submit" value="Login">
-          <input class="btn btn-outline-primay btn-light" type="submit" value="Logout">
-        </div> -->
+        <span id="isLoginNo">
+          <div class="login">
+            <input class="btn btn-outline-primay btn-light" type="button" value="Login"
+              onclick="location.href='login.html'">
+            <input class="btn btn-outline-primay btn-light" type="button" value="SignUp"
+              onclick="location.href='signup.html'">
+          </div>
+        </span>
       </div>
     </div>
   </nav>
 
   <div class="container" id="main">
-    <div class ="col-12 col-sm-12 text-center">
-			<h2 class="bg-primary text-white"><b>Today Ranking</b></h2>
-		</div>
+    <div class="col-12 col-sm-12 text-center">
+      <h2 class="bg-primary text-white" style="padding: 13px;"><b>Today Ranking</b></h2>
+    </div>
     <div class="card-deck mt-5" id="ddeck">
 
-      
+
 
     </div>
   </div>
@@ -86,43 +109,71 @@
 
   <script>
 
-window.addEventListener('scroll', function () {
-			var bodyEl = document.querySelector('body');
-			var bodyHeight = bodyEl.offsetHeight;
-			var scrollable = bodyHeight - window.innerHeight;
-			var progressEl = document.querySelector('.progress');
-			var per = Math.floor(window.scrollY / scrollable * 100) + '%';
-			progressEl.style.width = per;
-		});
+    fetch('/api/isLogin')
+      .then(v => {
+        if (v.status == 200) {
+          return v.json()
+        }
+      })
+      .then(v => {
+        if (v.res === true) {
+          document.getElementById('isLoginNo').style.display = 'none'
+          fetch("/api/user")
+            .then(res => {
+              if (res.status == 200)
+                return res.json()
+            })
+            .then(res => {
+              if (res) {
+                document.getElementById("mname").innerHTML = res.name
+                document.getElementById("profileimg").src = res.img
 
-		fetch('/api/userList')
-			.then(v => {
-				if (v.status == 200) {
-					return v.json()
-				}
-			})
-			.then(v => {
-				if (v) {
-					const table = document.getElementById('ddeck')
-					//console.log(table, v)
-					for (let i = 0; i < v.res.length; i++) {
+              }
+              else {
+                console.log("profilebox ERROR")
+              }
+            })
+        }
+        else {
+          document.getElementById('isLoginOk').style.display = 'none'
+        }
+      })
 
+    window.addEventListener('scroll', function () {
+      var bodyEl = document.querySelector('body');
+      var bodyHeight = bodyEl.offsetHeight;
+      var scrollable = bodyHeight - window.innerHeight;
+      // var progressEl = document.querySelector('.progress');
+      var per = Math.floor(window.scrollY / scrollable * 100) + '%';
+      // progressEl.style.width = per;
+    });
+
+    fetch('/api/userList')
+      .then(v => {
+        if (v.status == 200) {
+          return v.json()
+        }
+      })
+
+      .then(v => {
+        if (v) {
+          const table = document.getElementById('ddeck')
+          for (let i = 0; i < v.res.length; i++) {
             let row = `<div class="col-12 col-sm-6 pt-5">
             <div class="card text-center text-black border-info m-auto">
-              <img src="img/title.png" class="card-img-top" alt="...">
+              <img src="${v.res[i].img}" class="card-img-top" height="250" alt="...">
               <div class="card-body">
-                <h5 class="card-title">${v.res[i].name}</h5>
-                <p class="card-text">${v.res[i].msg}</p>
-                <a href="/mypage.html" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
-              </div>
-          </div>`
-          table.innerHTML += row
-
-					}
-				}
-				else
-					console.log("No User")
-			})
+                <h5 class="card-title">Name: ${v.res[i].name}</h5>
+                <p class="card-text">Message: ${v.res[i].message}<br></p>
+                <p class="card-text" style="color:green">Today: ${v.res[i].today}<br></p>
+                <a href="/youpage.html?id=${v.res[i].id}" class="btn btn-outline-warning btn-lg">홈페이지 바로가기</a>
+              </div>`
+            table.innerHTML += row
+          }
+        }
+        else
+          console.log("No User")
+      })
 
 
   </script>

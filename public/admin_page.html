@@ -15,12 +15,6 @@
 	<title>관리자 페이지</title>
 
 	<style>
-		.btn {
-			width: 70px;
-			height: 20px;
-			text-align: center;
-			padding: 0px;
-		}
 
 		.btn a {
 			display: block;
@@ -95,17 +89,26 @@
 			</a>
 		</div>
 	</header>
+	
 	<nav>
-		<div class="container">
-			<span class="row">
-				<a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
-				<span class="mt-3">관리자님 환영합니다.</span>
-			</span>
-		</div>
-	</nav>
+        <div class="container">
+            <div class="row" style="display: flex;box-sizing: border-box; padding: 7px 0;
+      align-items: center;">
+                <a style="margin-right: auto;" href="profilebox.html" class="common1 ssu-title"><b>SSUWORLD</b></a>
+                <div id="isLoginOk" style="display: flex; flex-direction: row; align-items: center;">
+					<span class="mt-3">관리자님 환영합니다.</span>
+					<form action="/logout" method="GET">
+						<input class="btn btn-outline-primay btn-light" type="submit" value="Logout"
+							style="margin-left: 8px;">
+					</form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
 	<div class="container " id="main">
 		<div class="col-12 col-sm-12 text-center">
-			<h2 class="bg-primary text-white">Admin Page</h2>
+			<h2 class="bg-primary text-white" style="padding: 8px;" >Admin Page</h2>
 		</div>
 		<div class="row mt-5">
 			<div class="col-10 col-sm-10 m-auto">
@@ -137,7 +140,27 @@
 			var per = Math.floor(window.scrollY / scrollable * 100) + '%';
 			progressEl.style.width = per;
 		});
-
+		/**
+		 * user는 string이고 해당 유저를 제거하는 함수
+		 */
+		function deleteUser(user) {
+			fetch('/api/user/' + user, {
+				method:'DELETE'
+			})
+				.then(v => {
+					if (v.status == 200) {
+						return v.json()
+					}
+				})
+				.then(v => {
+					if (v) {
+						location.reload()
+						console.log("삭제완료")
+					}
+					else
+						console.log("No User(Del)")
+				})
+		}
 		fetch('/api/userList')
 			.then(v => {
 				if (v.status == 200) {
@@ -147,14 +170,14 @@
 			.then(v => {
 				if (v) {
 					const table = document.getElementById('userlist')
-					console.log(table, v)
 					for (let i = 0; i < v.res.length; i++) {
 
 						let row = `<tr>
 									<td>${i + 1}</td>
 									<td>${v.res[i].name}</td>
+									<td>${v.res[i].id}</td>
 									<td>
-										<button type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
+										<button onclick='deleteUser("${v.res[i].id}")' type="button" class="btn btn-danger" style="height: 30px; width: 100px;">삭제</button>
 									</td>
 								</tr>`
 						table.innerHTML += row
@@ -163,6 +186,11 @@
 				else
 					console.log("No User")
 			})
+
+		
+
+
+		
 	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

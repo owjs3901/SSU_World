@@ -15,12 +15,6 @@
     <title>프로필 설정</title>
 
     <style>
-        .btn {
-            width: 80px;
-            height: 30px;
-            text-align: center;
-            padding: 0px;
-        }
 
         .btn a {
             display: block;
@@ -94,9 +88,9 @@
         }
 
         .mod {
-            width: 40px;
-            height: 40px;
-            border-radius: 70%;
+
+            width: 200px;
+            height: 30px;
             overflow: hidden;
             background-color: #fff;
         }
@@ -107,10 +101,10 @@
             object-fit: fill;
         }
 
-        #main{
-			margin-top: 50px;
-			border: 3px solid skyblue;
-		}
+        #main {
+            margin-top: 50px;
+            border: 3px solid skyblue;
+        }
     </style>
 </head>
 
@@ -122,48 +116,52 @@
     </header>
     <nav>
         <div class="container">
-            <div class="row">
-                <a href="profilebox.html" class="common1"><b>SSUWORLD</b></a>
-                <div class="mbox">
-                    <img class="mprofile" src="img/profile.jpg">
+            <div class="row" style="display: flex;box-sizing: border-box; padding: 7px;
+      align-items: center;">
+                <a style="margin-right: auto;" href="profilebox.html" class="common1 ssu-title"><b>SSUWORLD</b></a>
+                <div id="isLoginOk" style="display: flex; flex-direction: row; align-items: center;">
+                <div class="mbox" style="margin-right: 4px;">
+                    <a href="mypage.html">
+                    <img class="mprofile" src="img/profile.jpg" herf>
+                    </a>
                 </div>
-                <!-- <span class="mt-3" id="mname">NAME</span> -->
-                <span class="mt-3">님 환영합니다.</span>
-                <!-- <div class="login">
-                    <input class="btn btn-outline-primay btn-light" type="submit" value="Login">
-                    <input class="btn btn-outline-primay btn-light" type="submit" value="Logout">
-                </div> -->
+                <span id="mname" style="color: white;"></span>
+                <span style="color: white;">님 환영합니다.</span>
+                <input class="btn btn-outline-primay btn-light" type="button" value="Logout" style="margin-left: 7px;">
+                </div>
             </div>
         </div>
     </nav>
     <div class="container p-5" id="main">
-        <div class="row">
-            <div class="col-12 col-sm-12 container text-center">
-                <div class="box" style="margin: 0px auto;">
-                    <img class="profile" src="img/profile.jpg">
+        <form action="/profile" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-12 col-sm-12 container text-center">
+                    <div class="box" id="image_preview" style="margin: 0px auto;">
+                        <img class="profile" src="img/profile.jpg">
+                    </div>
+                    <input type="file" class="mod" id="img1" name="img"></input>
+
                 </div>
-                <button class="mod" type="button"><img class="m" src="img/modify.png" alt=""></button>
             </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-3 col-sm-3 input-group m-auto">
-                <input type="text" class="form-control" placeholder="이름" aria-label="name"
-                    aria-describedby="basic-addon2">
+            <div class="row mt-5">
+                <div class="col-3 col-sm-3 input-group m-auto">
+                    <input type="text" class="form-control" placeholder="이름" aria-label="name" name="name"
+                        aria-describedby="basic-addon2" id="s_id">
+                </div>
             </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-6 col-sm-6 input-group m-auto">
-                <!-- <input type="text" class="form-control" placeholder="상태 메세지" aria-label="message"
-                    aria-describedby="basic-addon2"> -->
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                    placeholder="상태 메세지"></textarea>
+            <div class="row mt-4">
+                <div class="col-6 col-sm-6 input-group m-auto">
+                    <!-- <input type="text" class="form-control" placeholder="상태 메세지" aria-label="message"
+                        aria-describedby="basic-addon2"> -->
+                    <textarea class="form-control" rows="3" placeholder="상태 메세지" name="msg" id="s_msg"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-12 col-sm-12 text-center">
-                <button type="button" class="btn btn-warning text-white" style="height: 40px;" type="submit">확인</button>
+            <div class="row mt-5">
+                <div class="col-12 col-sm-12 text-center">
+                    <input type="submit" class="btn btn-warning text-white" style="height: 40px;" value="확인">
+                </div>
             </div>
-        </div>
+            <form>
     </div>
 
     <div id="footer">
@@ -190,44 +188,48 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-    
+
     <script>
-        fetch("/api/user")
+        $('#img1').on('change', function () {
+            ext = $(this).val().split('.').pop().toLowerCase(); //확장자
+            //배열에 추출한 확장자가 존재하는지 체크
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+                resetFormElement($(this)); //폼 초기화
+                window.alert('이미지 파일이 아닙니다! (gif, png, jpg, jpeg 만 업로드 가능)');
+            } else {
+                file = $('#img1').prop("files")[0];
+                blobURL = window.URL.createObjectURL(file);
+                $('#image_preview img').attr('src', blobURL);
+
+            }
+        });
+
+        fetch('/api/isLogin')
             .then(res => {
                 if (res.status == 200)
                     return res.json()
             })
-            .then(res => {
-                if(res){
-                document.getElementById("mname").innerHTML = res.name
-                }
+            .then(v => {
+                if (v.res)
+                    fetch("/api/user")
+                        .then(res => {
+                            if (res.status == 200)
+                                return res.json()
+                        })
+                        .then(res => {
+                            if (res) {
+                                document.getElementById("s_id").value = res.name
+                                document.getElementById("mname").innerHTML = res.name
+                                document.getElementById("s_msg").value = res.message
+                                document.getElementById("image_preview").children[0].src = res.img
+                                document.getElementsByClassName("mbox")[0].children[0].children[0].src = res.img
+                            }
+                        })
             })
 
-        function overlap(){
-				//console.log('aaaaa')
-				const idInput = document.getElementsByName('id')[0];
 
-				fetch('/api/overlap', {
-					method:'POST',
-					headers:{
-						'Content-Type':'application/json'
-					},
-					body:JSON.stringify({
-						id:idInput.value
-					})
-				})
-				.then(v=>{
-					if(v.status == 200)
-						return v.json()
-				})
-				.then(v=>{
-					console.log('aaa', v)
-					if(v.res == true)
-						alert("중복된 아이디입니다.")
-					else
-						alert("사용가능한 아이디입니다.")
-					
-				})
+
+
     </script>
 </body>
 
